@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login - Smart Blood Donation Network</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div style="display: flex; justify-content: center; align-items: center; min-height: 80vh; padding: 20px;">
+    
+    <div class="card" style="width: 100%; max-width: 400px; padding: 40px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; box-sizing: border-box;">
+        
+        <h1 style="color: #bc0021; margin-bottom: 30px; font-size: 28px; font-weight: bold;">Admin Login</h1>
+        
+        <form id="loginForm" style="display: flex; flex-direction: column; gap: 20px; width: 100%;">
+            <input type="text" id="username" placeholder="Username" style="width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;" required>
+            
+            <input type="password" id="password" placeholder="Password" style="width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;" required>
+            
+            <button type="submit" style="background-color: #bc0021; color: white; width: 100%; padding: 14px; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; transition: background 0.2s;">Login</button>
+        </form>
+        
+    </div>
+
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (user === "admin" && pass === "admin123") {
+        localStorage.setItem("adminLoggedIn", "true");
+        alert("Authentication Successful!");
+        window.location.href = "admin.html";
+    } else {
+        alert("Invalid Username or Password!");
+    }
+});
+</script>
+
+</body>
+</html>

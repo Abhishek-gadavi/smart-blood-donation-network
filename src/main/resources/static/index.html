@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Blood Donation Network</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Smart Blood Donation Network</h1>
+    <p>Save Lives Through Blood Donation</p>
+
+    <div class="menu">
+        <a href="login.html" style="background-color: #333; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Admin Portal Login</a>
+    </div>
+
+    <br><br>
+
+    <div style="display: flex; gap: 40px; justify-content: space-between;">
+        
+        <div class="card" style="flex: 1; padding: 20px;">
+            <h2>Register as a Blood Donor</h2>
+            <form id="donorForm">
+                <input type="text" id="name" placeholder="Your Full Name" required><br><br>
+                <input type="text" id="bloodGroup" placeholder="Blood Group (e.g., O+, AB-)" required><br><br>
+                
+                <input type="tel" id="phone" pattern="[0-9]{10}" placeholder="10-Digit Mobile Number" required><br><br>
+                
+                <input type="text" id="location" placeholder="Your City/Location" required><br><br>
+                
+                <input type="number" id="age" min="18" max="65" placeholder="Your Age (18-65)" required><br><br>
+                
+                <button type="submit" style="background-color: #2e7d32; color: white;">Submit Registration</button>
+            </form>
+        </div>
+
+        <div class="card" style="flex: 1; padding: 20px;">
+            <h2>Submit an Emergency Blood Request</h2>
+            <form id="requestForm">
+                <input type="text" id="patientName" placeholder="Patient Full Name" required><br><br>
+                <input type="text" id="requestBloodGroup" placeholder="Required Blood Group" required><br><br>
+                <input type="text" id="hospitalName" placeholder="Hospital Name & Branch" required><br><br>
+                <input type="text" id="requestLocation" placeholder="Hospital Location/City" required><br><br>
+                
+                <input type="tel" id="requestPhone" pattern="[0-9]{10}" placeholder="Attendant 10-Digit Mobile" required><br><br>
+                
+                <label for="priority">Urgency Priority Level:</label><br>
+                <select id="priority" style="width: 100%; padding: 10px; margin-top: 5px;">
+                    <option value="NORMAL">Normal Requirement</option>
+                    <option value="URGENT">Urgent Need</option>
+                    <option value="CRITICAL">Critical Emergency</option>
+                </select>
+                <br><br>
+                <button type="submit" style="background-color: #c62828; color: white;">Post Urgent Request</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

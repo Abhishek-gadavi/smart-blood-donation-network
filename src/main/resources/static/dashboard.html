@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Dashboard</h1>
+
+    <div class="menu">
+        <a href="donors.html">Donors</a>
+        <a href="requests.html">Requests</a>
+        <a href="index.html">Home</a>
+        <a href="login.html">Logout</a>
+    </div>
+
+    <br>
+
+   <div class="cards">
+    <div class="card">
+        <h3>Total Donors</h3>
+        <p id="totalDonors">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Requests</h3>
+        <p id="totalRequests">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Approved</h3>
+        <p id="approvedRequests">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Rejected</h3>
+        <p id="rejectedRequests">0</p>
+    </div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+    loadDashboard();
+</script>
+
+</body>
+</html>

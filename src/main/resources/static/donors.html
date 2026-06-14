@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Donors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Registered Donors Management Directory</h1>
+
+    <div style="margin-bottom: 20px;">
+        <input type="text" id="searchBloodGroup" placeholder="Filter by Blood Group (e.g., AB+)">
+        <button onclick="searchDonors()">Search</button>
+        <button onclick="loadDonors()" style="background-color: #666;">View All Donors</button>
+    </div>
+
+    <table border="1" width="100%" align="center" id="donorTable">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Donor Name</th>
+                <th>Blood Group</th>
+                <th>Phone</th>
+                <th>Location</th>
+                <th>Age</th>
+                <th>Action Operations</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+<script>
+    // Automatically list database records securely on frame initialization
+    loadDonors();
+</script>
+
+</body>
+</html>

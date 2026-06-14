@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<script>
+if (localStorage.getItem("adminLoggedIn") !== "true") {
+    alert("⛔ Access Denied! Please login with valid administrator credentials first.");
+    window.location.href = "login.html";
+}
+</script>
+
+<div class="container">
+
+    <h1>Smart Blood Donation Network</h1>
+    <div class="banner">
+        <h2>Save Lives Through Blood Donation</h2>
+        <p>Manage donors, requests and emergency blood requirements in one platform.</p>
+    </div>
+    <p style="text-align: center; font-weight: bold; margin-bottom: 20px;">Admin Control Panel</p>
+
+    <div class="menu">
+        <button onclick="showSection('dashboard')">Dashboard</button>
+        <button onclick="showSection('donors')">Donors</button>
+        <button onclick="showSection('requests')">Requests</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <div id="inventoryAlertBox" style="text-align: center; font-weight: bold; margin-bottom: 15px;"></div>
+
+    <div id="dashboard" class="section">
+        <h2>Dashboard Overview</h2>
+
+        <div class="cards">
+            <div class="card"><h3>Total Donors</h3><p id="totalDonors">0</p></div>
+            <div class="card"><h3>Total Requests</h3><p id="totalRequests">0</p></div>
+            <div class="card"><h3>Approved</h3><p id="approvedRequests">0</p></div>
+            <div class="card"><h3>Rejected</h3><p id="rejectedRequests">0</p></div>
+        </div>
+        <br><br>
+
+        <div style="width: 450px; margin: auto;">
+            <canvas id="requestChart"></canvas>
+        </div>
+    </div>
+
+    <div id="donors" class="section" style="display:none;">
+        <iframe src="donors.html" width="100%" height="750" style="border:none;"></iframe>
+    </div>
+
+    <div id="requests" class="section" style="display:none;">
+        <iframe src="requests.html" width="100%" height="750" style="border:none;"></iframe>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+function showSection(id) {
+    document.querySelectorAll(".section").forEach(sec => {
+        sec.style.display = "none";
+    });
+
+    document.getElementById(id).style.display = "block";
+
+    if(id === "dashboard") {
+        loadDashboard();
+    }
+}
+
+// SECURITY FIX: Clears session tracking tokens upon sign-out
+function logout() {
+    localStorage.removeItem("adminLoggedIn");
+    alert("Logged out successfully.");
+    window.location.href = "login.html";
+}
+
+loadDashboard();
+</script>
+
+<footer class="footer">
+    <h3>Smart Blood Donation Network</h3>
+    <p>Connecting Donors and Patients Faster</p>
+    <p>Every Donation Can Save a Life </p>
+</footer>
+
+</body>
+</html>
