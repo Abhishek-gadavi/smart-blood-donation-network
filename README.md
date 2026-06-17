@@ -82,7 +82,7 @@ src/
 
 ## 👨‍💻 Developed By
 
-Sandeep Gayadhankar
+Abhishek Gadavi
 
 Electronics and Communication Engineering (ECE)
 
